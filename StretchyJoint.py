@@ -1,7 +1,7 @@
 from pymel.core import *
 
 
-class StretchyJointInterface(object):
+class StretchyJoint(object):
     def __init__(self):
         pass
 
@@ -16,7 +16,7 @@ class StretchyJointInterface(object):
         pass
 
 
-class StretchyJoint(StretchyJointInterface):
+class StretchyJointSetup(StretchyJoint):
     """
     Setup class for a stretchy joint setup.
 
@@ -238,7 +238,7 @@ class StretchyJoint(StretchyJointInterface):
             warning('Too many transform nodes selected! Please select exactly two.')
 
         else:
-            s_joint = StretchyJoint()
+            s_joint = StretchyJointSetup()
 
             s_joint.setup(sel_list)
             s_joint.build()
@@ -251,7 +251,7 @@ class StretchyJoint(StretchyJointInterface):
 
 
 def main():
-    s_jnt = StretchyJoint()
+    s_jnt = StretchyJointSetup()
 
     s_jnt.setup()
     s_jnt.build()
